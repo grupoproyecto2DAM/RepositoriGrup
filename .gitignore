@@ -1,0 +1,20 @@
+# Odoo
+*.pyc
+__pycache__/
+*.log
+
+# Datos de Odoo (NO subir)
+data/
+filestore/
+sessions/
+
+# Docker
+.env
+
+# IDE
+.idea/
+.vscode/
+
+# Sistema
+Thumbs.db
+.DS_Store

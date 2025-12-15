@@ -1,0 +1,8 @@
+<odoo>
+<menuitem id="simagrow_menu_root" name="SIMAGROW" sequence="10"/>
+
+
+<menuitem id="simagrow_menu_incidencies" name="Incidències" parent="simagrow_menu_root" sequence="10"/>
+<menuitem id="simagrow_menu_espais" name="Espais" parent="simagrow_menu_root" sequence="20"/>
+<menuitem id="simagrow_menu_indicadors" name="Indicadors" parent="simagrow_menu_root" sequence="30"/>
+</odoo>

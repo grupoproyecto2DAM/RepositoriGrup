@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_simagrow_espai,simagrow.espai,model_simagrow_espai,,1,1,1,1
+access_simagrow_incidencia,simagrow.incidencia,model_simagrow_incidencia,,1,1,1,1
+access_simagrow_indicador,simagrow.indicador,model_simagrow_indicador,,1,1,1,1

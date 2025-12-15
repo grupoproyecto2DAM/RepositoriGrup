@@ -1,0 +1,44 @@
+<odoo>
+    <record id="view_simagrow_indicador_list" model="ir.ui.view">
+        <field name="name">simagrow.indicador.list</field>
+        <field name="model">simagrow.indicador</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="categoria"/>
+                <field name="valor"/>
+                <field name="unitat"/>
+                <field name="data"/>
+            </list>
+        </field>
+    </record>
+
+
+    <record id="view_simagrow_indicador_form" model="ir.ui.view">
+        <field name="name">simagrow.indicador.form</field>
+        <field name="model">simagrow.indicador</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="categoria"/>
+                        <field name="valor"/>
+                        <field name="unitat"/>
+                        <field name="data"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_simagrow_indicador" model="ir.actions.act_window">
+        <field name="name">Indicadors</field>
+        <field name="res_model">simagrow.indicador</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+    <menuitem id="menu_simagrow_indicador" parent="simagrow_menu_indicadors" action="action_simagrow_indicador"/>
+</odoo>
