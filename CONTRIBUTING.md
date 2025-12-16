@@ -1,7 +1,8 @@
 # Projecte Intermodular
 
 ## Participants
-Raul Garcia
-Ruben Santacatalina
-Josep Juan
-Alex Camuñas
+
+- Raul Garcia
+- Ruben Santacatalina
+- Josep Juan
+- Alex Camuñas
