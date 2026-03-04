@@ -1,8 +1,7 @@
 package org.simarro.repository;
 
 import org.simarro.model.Espacio;
-import org.simarro.model.enums.CategoriaIncidencia;
-import org.simarro.model.enums.TipoEspacio;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -27,7 +26,7 @@ public interface IEspacioRepository extends JpaRepository<Espacio, Integer> {
     // ExisteDestino
     boolean existsByNombre(String nombre);
 
-    List<Espacio> findByNombreAndTipoAndZona(String titulo, CategoriaIncidencia tipo, TipoEspacio zona);
+    List<Espacio> findByNombre(String nombre);
 
 
 

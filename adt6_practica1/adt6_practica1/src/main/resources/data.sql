@@ -8,3 +8,17 @@ INSERT INTO incidencias (titulo, tipo, zona, descripcion, image, fecha)
 VALUES ('Caída del servidor principal', 'IT', 'Sala de Rack', 'Alguien dejó un café encima del servidor. El servidor ahora es un pisapapeles muy caro.', 'fried_server.webp', '2025-12-25');
 INSERT INTO incidencias (titulo, tipo, zona, descripcion, image, fecha)
 VALUES ('Error 404: Dignidad no encontrada', 'RRHH', 'Despacho Dirección', 'El jefe ha intentado hacer un baile de TikTok en la reunión trimestral. Hay traumas severos.', 'cringe.png', '2026-02-14');
+INSERT INTO espacios (nombre, descripcion, incidencias)
+VALUES ('Aseos Planta 3', 'Dentro de la taza del WC del tercer aseo', 'Atasco legendario, Olor insoportable');
+
+INSERT INTO espacios (nombre, descripcion, incidencias)
+VALUES ('Sala de Servidores', 'Habitación a -5 grados para llantos de becarios', 'Servidor ardiendo, Puerta bloqueada');
+
+INSERT INTO espacios (nombre, descripcion, incidencias)
+VALUES ('Cafetería', 'Zona de guerra por el último donut', 'Máquina de café explosiva, Falta de azúcar');
+
+INSERT INTO espacios (nombre, descripcion, incidencias)
+VALUES ('Despacho del Director', 'Muebles caros y poco uso', 'Moqueta manchada de caviar, Ego demasiado grande');
+
+INSERT INTO espacios (nombre, descripcion, incidencias)
+VALUES ('Parking Subterráneo', 'Lugar oscuro con goteras de ácido', 'Coche abandonado desde 1998, Luces parpadeantes');

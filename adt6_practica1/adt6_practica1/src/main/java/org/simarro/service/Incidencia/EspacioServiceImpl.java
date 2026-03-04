@@ -2,8 +2,6 @@ package org.simarro.service.Incidencia;
 
 import jakarta.transaction.Transactional;
 import org.simarro.model.Espacio;
-import org.simarro.model.enums.CategoriaIncidencia;
-import org.simarro.model.enums.TipoEspacio;
 import org.simarro.repository.IEspacioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

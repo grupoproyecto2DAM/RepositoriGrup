@@ -1,8 +1,7 @@
 package org.simarro.service.Incidencia;
 
 import org.simarro.model.Espacio;
-import org.simarro.model.enums.CategoriaIncidencia;
-import org.simarro.model.enums.TipoEspacio;
+
 
 import java.util.List;
 
