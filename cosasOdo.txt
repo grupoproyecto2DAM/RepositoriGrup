@@ -1,0 +1,24 @@
+Espai {
+Int id
+String zona (Enum)
+incidencias (query de la base de datos, no atributo de la clase)
+}
+
+Incidencia { (Lista de incidencias)
+Int id
+String titulo
+String tipo (Enums/Spinner)
+String zona (Enums/Spinner)
+String descripcion
+String fecha (LocalDateTime.now()/ SimpleDataFormat("dd/MM/yyyy"), Locale.getDefault()).format(Date())
+String estado (Enum)
+String alumnoNia(relacion tabla usuari nia)
+}
+Usuari {
+String nombre
+String nia (equivalene espiritual a id)
+String password
+String rol (alumno/profesor)
+String curso
+String materia
+}
