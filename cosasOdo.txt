@@ -1,4 +1,4 @@
-Incidencia { (Lista de incidencias)
+Incidencia { 
 Int id
 String titulo
 String tipo (Enums/Spinner)
@@ -8,11 +8,4 @@ String fecha (LocalDateTime.now()/ SimpleDataFormat("dd/MM/yyyy"), Locale.getDef
 String estado (Enum)
 String alumnoNia(relacion tabla usuari nia)
 }
-Usuari {
-String nombre
-String nia (equivalene espiritual a id)
-String password
-String rol (alumno/profesor)
-String curso
-String materia
-}
+

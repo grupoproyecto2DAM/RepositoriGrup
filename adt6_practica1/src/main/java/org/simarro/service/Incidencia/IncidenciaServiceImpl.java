@@ -30,6 +30,11 @@ public class IncidenciaServiceImpl implements IIncidenciaService {
     }
 
     @Override
+    public List<Incidencia> buscarporNIA(Integer nia) {
+        return repo.findByAlumnoNIA(nia);
+    }
+
+    @Override
     public void eliminar(Integer id) {
         repo.deleteById(id);
     }

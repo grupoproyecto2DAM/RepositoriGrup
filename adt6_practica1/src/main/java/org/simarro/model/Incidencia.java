@@ -29,13 +29,18 @@ public class Incidencia {
     @Column
     private String descripcion;
 
-    @Schema(description = "Imagen de la issue", example = "Qatar Airlines")
-    @Column
-    private String image;
-
     @Schema(description = "Cuando se ha realizado", example = "Qatar Airlines")
     @Column
     private String fecha;
+
+    @Schema(description = "Cuando se ha realizado", example = "Qatar Airlines")
+    @Column
+    private String alumnoNIA;
+
+    @Schema(description = "Cuando se ha realizado", example = "Qatar Airlines")
+    @Column
+    private String estado;
+
 
     public Integer getId() {
         return id;
@@ -61,14 +66,6 @@ public class Incidencia {
         this.descripcion = descripcion;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
     public String getFecha() {
         return fecha;
     }
@@ -91,5 +88,21 @@ public class Incidencia {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getAlumnoNIA() {
+        return alumnoNIA;
+    }
+
+    public void setAlumnoNIA(String alumnoNIA) {
+        this.alumnoNIA = alumnoNIA;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }

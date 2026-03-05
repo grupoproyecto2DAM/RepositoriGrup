@@ -77,7 +77,7 @@ public class IncidenciaController {
         return new ResponseEntity<>(obj, HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     @Operation(summary = "Elimina una incidencia existente por id")
     @ApiResponses(value = {
             @ApiResponse(
@@ -94,6 +94,25 @@ public class IncidenciaController {
 
         // Código 204 NOT CONTENT para delete
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/{nia}")
+    @Operation(summary = "Obtiene el listado de incidencias dado un usuario")
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Existe el listado, aunque puede que vacio",
+                    content = @Content(schema = @Schema(implementation = Incidencia.class))),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "No se puede obtener el listado",
+                    content = @Content(schema = @Schema(implementation=ResponseEntity.class)))
+    })
+    public ResponseEntity<List<Incidencia>> listarNIA(@PathVariable Integer nia) {
+        List<Incidencia> lista = service.buscarporNIA(nia);
+
+        // Código 200 OK para select
+        return new ResponseEntity<>(lista, HttpStatus.OK);
     }
 
     /////////////////////////////////////////

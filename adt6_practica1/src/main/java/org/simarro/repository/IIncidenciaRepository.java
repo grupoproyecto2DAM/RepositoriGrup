@@ -24,6 +24,8 @@ public interface IIncidenciaRepository extends JpaRepository<Incidencia, Integer
     List<Incidencia> findByTipoAndZona(String tipo, String zona);
     List<Incidencia> findByZona(String zona);
     List<Incidencia> findByNombreAndZona(String nombre, String zona);
+
+    List<Incidencia> findByAlumnoNIA(Integer alumnoNIA);
     List<Incidencia> findByNombre(String nombre);
     List<Incidencia> findByTipo(String tipo);
     List<Incidencia> findByNombreAndTipo(String nombre, String tipo);

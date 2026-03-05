@@ -12,13 +12,14 @@ INSERT INTO espacios (nombre) VALUES ('Sala de Servidores');
 INSERT INTO espacios (nombre) VALUES ('Cafetería');
 INSERT INTO espacios (nombre) VALUES ('Despacho del Director');
 INSERT INTO espacios (nombre) VALUES ('Parking Subterráneo');
+
 --Ponemos lo usuarios
 INSERT INTO usuaris (nombre, password, rol, curso, materia)
 VALUES ('Don Errequeerre', 'admin1234', 'director', 'Despacho 1', 'Ego y Protocolo');
 INSERT INTO usuaris (nombre, password, rol, curso, materia)
 VALUES ('Manolo "El Quemao"', 'cafeneed42', 'profesor', '2º DAW', 'Base de Datos (y misticismo)');
 INSERT INTO usuaris (nombre, password, rol, curso, materia)
-VALUES ('Rubén el Liante', 'password', 'alumno', '1º ASIR', 'Química Recreativa');
+VALUES ('Rubén el Liante', 'password', 'alumno', '1º ASIR', 'Fisica Recreativa');
 INSERT INTO usuaris (nombre, password, rol, curso, materia)
 VALUES ('Paco "Cinta Americana"', 'paco33', 'mantenimiento', 'Sótano -2', 'Supervivencia Extrema');
 INSERT INTO usuaris (nombre, password, rol, curso, materia)
