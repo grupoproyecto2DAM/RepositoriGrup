@@ -6,6 +6,8 @@ import com.ragabe.model.enums.Rol;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.simarro.model.Incidencia;
+
 @Entity
 public class Usuari {
 

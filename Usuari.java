@@ -9,14 +9,12 @@ import java.util.List;
 
 @Entity
 public class Usuari {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    @Column
     private String nombre;
 
+    @Id
     @Column(unique = true, nullable = false)
-    private String email;
+    private String nia;
 
     @Enumerated(EnumType.STRING)
     private Rol rol;
@@ -24,7 +22,7 @@ public class Usuari {
     private boolean activo;
 
     @OneToMany(mappedBy = "creadaPor")
-    private List<Incidencia> incidenciasCreadas = new ArrayList<>();
+    private String alumnoNia;
 
     @OneToMany(mappedBy = "asignadaA")
     private List<Incidencia> incidenciasAsignadas = new ArrayList<>();
