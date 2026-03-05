@@ -19,16 +19,6 @@ public class Espacio {
     @Column
     private String nombre;
 
-
-    @Schema(description = "Es la descripcion del lugar de la incidencia", example = "Dentro de la taza del WC del tercer aseo")
-    @Column
-    private String descripcion;
-
-    @Schema(description = "La lista de incidencias", example = "Incidencia1, incidencia2...")
-    @Column
-    private String incidencias;
-
-
     public Integer getId() {
         return id;
     }
@@ -45,12 +35,4 @@ public class Espacio {
         this.nombre = nombre;
     }
 
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
 }

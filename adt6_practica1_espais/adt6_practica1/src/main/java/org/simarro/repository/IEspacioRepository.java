@@ -21,13 +21,11 @@ public interface IEspacioRepository extends JpaRepository<Espacio, Integer> {
     // Opción 2 - Eliminar
     void deleteByNombre(String nombre);
 
-
-
     // ExisteDestino
     boolean existsByNombre(String nombre);
 
     List<Espacio> findByNombre(String nombre);
 
-
+    List<Espacio> findById(String nombre);
 
 }
