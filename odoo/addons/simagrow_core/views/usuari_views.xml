@@ -1,0 +1,45 @@
+<odoo>
+    <record id="view_simagrow_usuari_list" model="ir.ui.view">
+        <field name="name">simagrow.usuari.list</field>
+        <field name="model">simagrow.usuari</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="nia"/>
+                <field name="nombre"/>
+                <field name="rol"/>
+                <field name="curso"/>
+                <field name="materia"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_simagrow_usuari_form" model="ir.ui.view">
+        <field name="name">simagrow.usuari.form</field>
+        <field name="model">simagrow.usuari</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nia"/>
+                        <field name="nombre"/>
+                        <field name="rol"/>
+                    </group>
+                    <group>
+                        <field name="curso"/>
+                        <field name="materia"/>
+                    </group>
+                    <group>
+                        <field name="password" password="True"/>
+                        <field name="password_hash" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_simagrow_usuaris" model="ir.actions.act_window">
+        <field name="name">Usuaris</field>
+        <field name="res_model">simagrow.usuari</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,52 @@
+<odoo>
+    <record id="action_simagrow_incidencies" model="ir.actions.act_window">
+        <field name="name">Incidències</field>
+        <field name="res_model">simagrow.incidencia</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    
+    <record id="view_simagrow_incidencia_list" model="ir.ui.view">
+        <field name="name">simagrow.incidencia.list</field>
+        <field name="model">simagrow.incidencia</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="titulo"/>
+                <field name="tipo"/>
+                <field name="zona"/>
+                <field name="estado"/>
+                <field name="fecha"/>
+                <field name="alumno_id"/>
+                <field name="profesor_id"/>
+                <field name="espai_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_simagrow_incidencia_form" model="ir.ui.view">
+        <field name="name">simagrow.incidencia.form</field>
+        <field name="model">simagrow.incidencia</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="titulo"/>
+                        <field name="tipo"/>
+                        <field name="zona"/>
+                        <field name="estado"/>
+                        <field name="fecha"/>
+                    </group>
+
+                    <group>
+                        <field name="alumno_id"/>
+                        <field name="profesor_id"/>
+                        <field name="espai_id"/>
+                    </group>
+
+                    <group>
+                        <field name="descripcion" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
