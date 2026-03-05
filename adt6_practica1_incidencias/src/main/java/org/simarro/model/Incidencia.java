@@ -15,7 +15,7 @@ public class Incidencia {
 
     @Schema(description = "Nombre principal de la incidencia", example = "Valencia")
     @Column
-    private String titulo;
+    private String nombre;
 
     @Schema(description = "El tipo segun la incidencia que sea", example = "Madrid")
     @Column
@@ -43,14 +43,6 @@ public class Incidencia {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
     }
 
     public String getTipo() {
@@ -91,5 +83,13 @@ public class Incidencia {
 
     public void setZona(String zona) {
         this.zona = zona;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }

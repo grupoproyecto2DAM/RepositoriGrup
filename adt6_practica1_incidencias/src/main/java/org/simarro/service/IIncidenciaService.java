@@ -12,8 +12,8 @@ public interface IIncidenciaService {
     void eliminar(Integer id);
 
     // Métodos específicos de esta entidad
-    void eliminarPorTitulo(String titulo);
-    boolean existsByTitulo(String titulo);
-    List<Incidencia> listarBusquedaFiltrada1(String titulo, String tipo, String zona);
-    List<Incidencia> listarBusquedaFiltrada2(String titulo, String tipo, String zona);
+    void eliminarPorNombre(String nombre);
+    boolean existsByNombre(String nombre);
+    List<Incidencia> listarBusquedaPorZona(String zona);
+
 }

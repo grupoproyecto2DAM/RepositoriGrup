@@ -1,6 +1,7 @@
 package org.simarro.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -58,7 +59,7 @@ public class IncidenciaController {
     }
 
     @PutMapping
-    @Operation(summary = "Modifica una incidencia existente")
+    @Operation(summary = "Modifica una incidencia existente por id")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -98,8 +99,8 @@ public class IncidenciaController {
     /////////////////////////////////////////
     // Métodos específicos de esta entidad //
     /////////////////////////////////////////
-    @DeleteMapping("/eliminarDestino")
-    @Operation(summary = "Elimina una incidencia")
+    @DeleteMapping("/eliminarIncidencia")
+    @Operation(summary = "Elimina una incidencia por nombre")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -110,77 +111,37 @@ public class IncidenciaController {
                     description = "No existe",
                     content = @Content(schema = @Schema(implementation=ResponseEntity.class)))
     })
-    public ResponseEntity<Void> eliminarPorDestino(@RequestParam(value = "titulo") String titulo) {
+    public ResponseEntity<Void> eliminarPoNombre(@RequestParam(value = "nombre") String nombre) {
 
-        if (!service.existsByTitulo(titulo)) {
+        if (!service.existsByNombre(nombre)) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        service.eliminarPorTitulo(titulo);
+        service.eliminarPorNombre(nombre);
 
         // Código 204 NOT CONTENT para delete
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    // Opción 1 - Búsqueda filtrada con métodos específicos
-    @GetMapping("/busquedaFiltrada1")
-    @Operation(summary = "Busca las incidencias con un filtro")
+    @GetMapping("/busquedaPorZona/{zona}")
+    @Operation(summary = "Busca las incidencias por zona")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
-                    description = "Existe el listado, aunque puede que vacio",
-                    content = @Content(schema = @Schema(implementation = Incidencia.class))),
+                    description = "Operación exitosa (puede devolver lista vacía)",
+                    content = @Content(array = @ArraySchema(schema = @Schema(implementation = Incidencia.class)))),
             @ApiResponse(
-                    responseCode = "404",
-                    description = "No se puede obtener el listado",
-                    content = @Content(schema = @Schema(implementation=ResponseEntity.class)))
+                    responseCode = "204",
+                    description = "No hay incidencias en esa zona (suerte la vuestra)",
+                    content = @Content)
     })
-    public ResponseEntity<List<Incidencia>> buscarIncidencias1(
-            @RequestParam(required = false) String titulo,
-            @RequestParam(required = false) String tipo,
-            @RequestParam(required = false) String zona) {
+    public ResponseEntity<List<Incidencia>> buscarIncidenciasZona(@PathVariable String zona) {
+        List<Incidencia> incidencias = service.listarBusquedaPorZona(zona);
 
-        List<Incidencia> incidencias = service.listarBusquedaFiltrada1(titulo, tipo, zona);
-
-        if(incidencias.isEmpty()) {
-            // Código 204 NoData para select
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }else{
-            // Código 200 OK para select
-            return new ResponseEntity<>(incidencias, HttpStatus.OK);
-        }
-    }
-
-    // Opción 2 - Búsqueda filtrada sin métodos específicos
-    @GetMapping("/busquedaFiltrada2")
-    @Operation(summary = "Busca las incidencias con un filtro2")
-    @ApiResponses(value = {
-            @ApiResponse(
-                    responseCode = "200",
-                    description = "Existe el listado, aunque puede que vacio",
-                    content = @Content(schema = @Schema(implementation = Incidencia.class))),
-            @ApiResponse(
-                    responseCode = "404",
-                    description = "No se puede obtener el listado",
-                    content = @Content(schema = @Schema(implementation=ResponseEntity.class)))
-    })
-    public ResponseEntity<List<Incidencia>> buscarIncidencias2(
-            @RequestParam(value = "origen", required = true) String origen,
-            @RequestParam(value = "destino", required = true) String destino,
-            @RequestParam(value = "escalas", required = true) String escalas) {
-
-        // Obtengo todos las incidencias filtradas
-        List<Incidencia> resultados  = service.listarBusquedaFiltrada2(origen, destino, escalas);
-
-        if(resultados.isEmpty()) {
-            // Código 204 NoData para select
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }else{
-            // Código 200 OK para select
-            return new ResponseEntity<>(resultados, HttpStatus.OK);
+        if (incidencias.isEmpty()) {
+            return ResponseEntity.noContent().build();
         }
 
+        return ResponseEntity.ok(incidencias);
     }
-
-
 }

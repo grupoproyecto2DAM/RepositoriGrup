@@ -39,65 +39,24 @@ public class IncidenciaServiceImpl implements IIncidenciaService {
 
     @Override
     @Transactional
-    public void eliminarPorTitulo(String titulo) {
-        //Opción 1 - Eliminar
-        repo.eliminarPorTitulo(titulo);
-
-        //Opción 2 - Eliminar
-        // repo.deleteByTitulo(titulo);
-    }
-
-    @Override
-    public boolean existsByTitulo(String titulo) {
-        // Opción 1 - ExisteDestino
-        return repo.existsByTitulo(titulo);
-
-        // Opción 2 - ExisteDestino
-        // return repo.existePorFecha(fecha);
+    public void eliminarPorNombre(String nombre) {
+        //Opción 1 - EliminarPorNombre
+        repo.eliminarPorNombre(nombre);
 
     }
 
     @Override
-    public List<Incidencia> listarBusquedaFiltrada1(String titulo, String tipo, String zona) {
+    public boolean existsByNombre(String nombre) {
+        // Opción 1 - ExisteNombre
+        return repo.existsByNombre(nombre);
 
-        if (titulo != null && tipo != null && zona != null) {
-            return repo.findByTituloAndTipoAndZona(titulo, tipo, zona);
-        } else if (titulo != null && tipo != null) {
-            return repo.findByTituloAndTipo(titulo, tipo);
-        } else if (titulo != null && zona != null) {
-            return repo.findByTituloAndZona(titulo, zona);
-        } else if (tipo != null && zona != null) {
-            return repo.findByTipoAndZona(tipo, zona);
-        } else if (titulo != null) {
-            return repo.findByTitulo(titulo);
-        } else if (tipo != null) {
-            return repo.findByTipo(tipo);
-        } else if (zona != null) {
-            return repo.findByZona(zona);
-        } else {
-            return repo.findAll();
-        }
+
     }
 
     @Override
-    public List<Incidencia> listarBusquedaFiltrada2(String titulo, String tipo, String zona) {
-
-        List<Incidencia> todos = repo.findAll();
-
-        List<Incidencia> resultados = new ArrayList<>();
-
-        // En este ejemplo, en el controlador se pasan obligatoriamente
-        // todos los parámetros. Por eso la condición (if) es fácil.
-        // Si suponemos que podemos pasar el número de parámetros que
-        // queramos, deberíamos hacer más condiciones para cada caso.
-        for (Incidencia incidencia : todos) {
-            if (incidencia.getTitulo().toLowerCase().equals(titulo) &&
-                    incidencia.getTipo().toLowerCase().equals(tipo) &&
-                    incidencia.getZona().equalsIgnoreCase(zona)) {
-
-                resultados.add(incidencia);
-            }
-        }
-        return resultados;
+    public List<Incidencia> listarBusquedaPorZona(String zona) {
+        return repo.findAll().stream()
+                .filter(i -> i.getZona().equalsIgnoreCase(zona))
+                .toList();
     }
 }

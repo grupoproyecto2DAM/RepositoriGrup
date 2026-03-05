@@ -15,29 +15,23 @@ public interface IIncidenciaRepository extends JpaRepository<Incidencia, Integer
     // Métodos específicos de esta entidad mediante JPQL
     //Opción 1 - Eliminar
     @Modifying
-    @Query(value = "DELETE FROM incidencia WHERE titulo LIKE %:titulo%", nativeQuery = true)
-    void eliminarPorTitulo(@Param("titulo") String titulo);
+    @Query(value = "DELETE FROM incidencia WHERE nombre LIKE %:nombre%", nativeQuery = true)
+    void eliminarPorNombre(@Param("nombre") String nombre);
     // Opción 2 - Eliminar
-    void deleteByTitulo(String titulo);
+    void deleteByNombre(String nombre);
 
 
     List<Incidencia> findByTipoAndZona(String tipo, String zona);
     List<Incidencia> findByZona(String zona);
-    List<Incidencia> findByTituloAndZona(String titulo, String zona);
-    List<Incidencia> findByTitulo(String titulo);
+    List<Incidencia> findByNombreAndZona(String nombre, String zona);
+    List<Incidencia> findByNombre(String nombre);
     List<Incidencia> findByTipo(String tipo);
-    List<Incidencia> findByTituloAndTipo(String titulo, String tipo);
-
+    List<Incidencia> findByNombreAndTipo(String nombre, String tipo);
+    boolean existsByNombre(String nombre);
 
     // Opción 1 - ExisteDestino
     @Query("SELECT CASE WHEN COUNT(v) > 0 THEN 'true' ELSE 'false' END FROM Incidencia v WHERE v.tipo = :tipo")
     boolean existePorTipo(@Param("tipo") String tipo);
-
-    // Opción 2 - ExisteDestino
-    boolean existsByTitulo(String titulo);
-
-    List<Incidencia> findByTituloAndTipoAndZona(String titulo, String tipo, String zona);
-
 
 
 }
