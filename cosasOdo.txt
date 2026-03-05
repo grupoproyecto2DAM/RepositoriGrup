@@ -1,9 +1,3 @@
-Espai {
-Int id
-String zona (Enum)
-incidencias (query de la base de datos, no atributo de la clase)
-}
-
 Incidencia { (Lista de incidencias)
 Int id
 String titulo
