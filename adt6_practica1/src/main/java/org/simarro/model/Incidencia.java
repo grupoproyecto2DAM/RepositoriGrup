@@ -35,7 +35,7 @@ public class Incidencia {
 
     @Schema(description = "Cuando se ha realizado", example = "Qatar Airlines")
     @Column
-    private String alumnoNIA;
+    private Integer alumnoNIA;
 
     @Schema(description = "Cuando se ha realizado", example = "Qatar Airlines")
     @Column
@@ -90,13 +90,6 @@ public class Incidencia {
         this.nombre = nombre;
     }
 
-    public String getAlumnoNIA() {
-        return alumnoNIA;
-    }
-
-    public void setAlumnoNIA(String alumnoNIA) {
-        this.alumnoNIA = alumnoNIA;
-    }
 
     public String getEstado() {
         return estado;
@@ -104,5 +97,13 @@ public class Incidencia {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public Integer getAlumnoNIA() {
+        return alumnoNIA;
+    }
+
+    public void setAlumnoNIA(Integer alumnoNIA) {
+        this.alumnoNIA = alumnoNIA;
     }
 }
