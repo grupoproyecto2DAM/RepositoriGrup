@@ -17,14 +17,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/usuaris")
-@Tag(name = "Usuaris", description = "Catálogo de incidencias")
+@Tag(name = "Usuaris", description = "Catálogo de usuarios")
 public class UsuariController {
 
     @Autowired
     private IUsuariService service;
 
     @GetMapping
-    @Operation(summary = "Obtiene el listado de incidencias")
+    @Operation(summary = "Obtiene el listado de usuarios")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -43,7 +43,7 @@ public class UsuariController {
     }
 
     @PostMapping
-    @Operation(summary = "Registra una nueva incidencia")
+    @Operation(summary = "Registra un nuevo usuario")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "201",
@@ -58,7 +58,7 @@ public class UsuariController {
     }
 
     @PutMapping
-    @Operation(summary = "Modifica una incidencia existente por id")
+    @Operation(summary = "Modifica un usuario existente por id")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -77,7 +77,7 @@ public class UsuariController {
     }
 
     @DeleteMapping("/{id}")
-    @Operation(summary = "Elimina una incidencia existente por id")
+    @Operation(summary = "Elimina un usuario existente por id")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -100,7 +100,7 @@ public class UsuariController {
     // Métodos específicos de esta entidad //
     /////////////////////////////////////////
     @DeleteMapping("/eliminarIncidencia")
-    @Operation(summary = "Elimina una incidencia por nombre")
+    @Operation(summary = "Elimina un usuario por nombre")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",

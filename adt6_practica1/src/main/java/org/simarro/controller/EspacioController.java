@@ -24,7 +24,7 @@ public class EspacioController {
     private IEspacioService service;
 
     @GetMapping
-    @Operation(summary = "Obtiene el listado de incidencias")
+    @Operation(summary = "Obtiene el listado de espacios")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -43,7 +43,7 @@ public class EspacioController {
     }
 
     @PostMapping
-    @Operation(summary = "Registra una nueva incidencia")
+    @Operation(summary = "Registra una nuevo espacio")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "201",
@@ -58,7 +58,7 @@ public class EspacioController {
     }
 
     @PutMapping
-    @Operation(summary = "Modifica una incidencia existente")
+    @Operation(summary = "Modifica un espacio existente")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -77,7 +77,7 @@ public class EspacioController {
     }
 
     @DeleteMapping("/{id}")
-    @Operation(summary = "Elimina una incidencia existente por id")
+    @Operation(summary = "Elimina un espacio existente por id")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -98,8 +98,8 @@ public class EspacioController {
     /////////////////////////////////////////
     // Métodos específicos de esta entidad //
     /////////////////////////////////////////
-    @DeleteMapping("/eliminarDestino")
-    @Operation(summary = "Elimina una incidencia")
+    @DeleteMapping("/eliminarPorNombre")
+    @Operation(summary = "Elimina un espacio")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -126,7 +126,7 @@ public class EspacioController {
 
     // Búsqueda filtrada sin métodos específicos
     @GetMapping("/busquedaFiltrada2")
-    @Operation(summary = "Busca las incidencias con un filtro2")
+    @Operation(summary = "Busca un espacio con un filtro2")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -150,8 +150,5 @@ public class EspacioController {
             // Código 200 OK para select
             return new ResponseEntity<>(resultados, HttpStatus.OK);
         }
-
     }
-
-
 }
