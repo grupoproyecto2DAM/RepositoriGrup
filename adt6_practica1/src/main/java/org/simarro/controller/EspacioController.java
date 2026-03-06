@@ -50,8 +50,9 @@ public class EspacioController {
                     description = "Se registra la incidencia",
                     content = @Content(schema = @Schema(implementation = Espacio.class)))
     })
-    public ResponseEntity<Espacio> registrar(@RequestBody Espacio espacio) {
-        Espacio obj = service.registrar(espacio);
+    public ResponseEntity<Espacio> registrar(@RequestBody String nombre) {
+
+        Espacio obj = service.registrar(new Espacio(nombre));
 
         // Código 201 CREATED para insert
         return new ResponseEntity<>(obj, HttpStatus.CREATED);
@@ -69,11 +70,16 @@ public class EspacioController {
                     description = "No existe",
                     content = @Content(schema = @Schema(implementation=ResponseEntity.class)))
     })
-    public ResponseEntity<Espacio> modificar(@RequestBody Espacio espacio) {
-        Espacio obj = service.modificar(espacio);
-
-        // Código 200 OK para update
-        return new ResponseEntity<>(obj, HttpStatus.OK);
+    public ResponseEntity<Espacio> modificar(@RequestBody String nombre) {
+        List<Espacio> todos = service.listar();
+        for(Espacio espacio:todos){
+            if (espacio.getNombre().equalsIgnoreCase(nombre)){
+                Espacio obj = service.modificar(espacio);
+                // Código 200 OK para update
+                return new ResponseEntity<>(obj, HttpStatus.OK);
+            }
+        }
+        return null;
     }
 
     @DeleteMapping("/{id}")

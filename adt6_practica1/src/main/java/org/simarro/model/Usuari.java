@@ -8,6 +8,17 @@ import jakarta.persistence.*;
 @Table(name = "usuaris")
 public class Usuari {
 
+    public Usuari() {
+    }
+
+    public Usuari(String nombre, String password, String rol, String curso, String materia) {
+        this.nombre = nombre;
+        this.password = password;
+        this.rol = rol;
+        this.curso = curso;
+        this.materia = materia;
+    }
+
     @Schema(description = "Identificador de la incidencia", example = "1")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -50,31 +50,15 @@ public class UsuariController {
                     description = "Se registra la incidencia",
                     content = @Content(schema = @Schema(implementation = Usuari.class)))
     })
-    public ResponseEntity<Usuari> registrar(@RequestBody Usuari usuari) {
+    public ResponseEntity<Usuari> registrar(@RequestBody String nombre, String password, String rol, String curso, String materia) {
+        Usuari usuari = new Usuari(nombre, password, rol, curso, materia);
         Usuari obj = service.registrar(usuari);
 
         // Código 201 CREATED para insert
         return new ResponseEntity<>(obj, HttpStatus.CREATED);
     }
 
-    @PutMapping
-    @Operation(summary = "Modifica un usuario existente por id")
-    @ApiResponses(value = {
-            @ApiResponse(
-                    responseCode = "200",
-                    description = "Existe",
-                    content = @Content(schema = @Schema(implementation = Usuari.class))),
-            @ApiResponse(
-                    responseCode = "404",
-                    description = "No existe",
-                    content = @Content(schema = @Schema(implementation=ResponseEntity.class)))
-    })
-    public ResponseEntity<Usuari> modificar(@RequestBody Usuari usuari) {
-        Usuari obj = service.modificar(usuari);
 
-        // Código 200 OK para update
-        return new ResponseEntity<>(obj, HttpStatus.OK);
-    }
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Elimina un usuario existente por id")
@@ -99,7 +83,7 @@ public class UsuariController {
     /////////////////////////////////////////
     // Métodos específicos de esta entidad //
     /////////////////////////////////////////
-    @DeleteMapping("/eliminarIncidencia")
+    @DeleteMapping("/eliminarUsuario")
     @Operation(summary = "Elimina un usuario por nombre")
     @ApiResponses(value = {
             @ApiResponse(

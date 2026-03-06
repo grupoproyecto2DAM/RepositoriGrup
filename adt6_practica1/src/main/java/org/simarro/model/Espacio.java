@@ -8,6 +8,13 @@ import jakarta.persistence.*;
 @Table(name = "espacios")
 public class Espacio {
 
+    public Espacio(){
+    }
+
+    public Espacio(String nombre) {
+        this.nombre = nombre;
+    }
+
     @Schema(description = "Identificador del lugar", example = "1")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

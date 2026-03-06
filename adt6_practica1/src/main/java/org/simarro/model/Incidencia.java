@@ -8,6 +8,19 @@ import jakarta.persistence.*;
 @Table(name = "incidencias")
 public class Incidencia {
 
+    public Incidencia() {
+    }
+
+    public Incidencia(String nombre, String tipo, String zona, String descripcion, String fecha, Integer alumnoNIA, String estado) {
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.zona = zona;
+        this.descripcion = descripcion;
+        this.fecha = fecha;
+        this.alumnoNIA = alumnoNIA;
+        this.estado = estado;
+    }
+
     @Schema(description = "Identificador de la incidencia", example = "1")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

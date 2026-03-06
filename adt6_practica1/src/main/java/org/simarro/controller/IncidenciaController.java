@@ -51,8 +51,9 @@ public class IncidenciaController {
                     description = "Se registra la incidencia",
                     content = @Content(schema = @Schema(implementation = Incidencia.class)))
     })
-    public ResponseEntity<Incidencia> registrar(@RequestBody Incidencia incidencia) {
-        Incidencia obj = service.registrar(incidencia);
+    public ResponseEntity<Incidencia> registrar(@RequestBody String nombre, String tipo, String zona, String descripcion, String fecha, Integer alumnoNIA, String estado) {
+        Incidencia inc = new Incidencia(nombre, tipo, zona, descripcion, fecha, alumnoNIA, estado);
+        Incidencia obj = service.registrar(inc);
 
         // Código 201 CREATED para insert
         return new ResponseEntity<>(obj, HttpStatus.CREATED);
