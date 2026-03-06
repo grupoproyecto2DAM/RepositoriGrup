@@ -1,7 +1,0 @@
-<odoo>
-    <!-- Grup per a gestionar SimaGrow des del backoffice -->
-    <record id="group_simagrow_manager" model="res.groups">
-        <field name="name">SimaGrow Manager</field>
-        <field name="category_id" ref="base.module_category_hidden"/>
-    </record>
-</odoo>

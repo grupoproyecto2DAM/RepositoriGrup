@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_simagrow_espai_manager,simagrow.espai manager,model_simagrow_espai,simagrow_core.group_simagrow_manager,1,1,1,1
-access_simagrow_incidencia_manager,simagrow.incidencia manager,model_simagrow_incidencia,simagrow_core.group_simagrow_manager,1,1,1,1
-access_simagrow_usuari_manager,simagrow.usuari manager,model_simagrow_usuari,simagrow_core.group_simagrow_manager,1,1,1,1
-access_simagrow_api_token_manager,simagrow.api_token manager,model_simagrow_api_token,simagrow_core.group_simagrow_manager,1,1,1,1
