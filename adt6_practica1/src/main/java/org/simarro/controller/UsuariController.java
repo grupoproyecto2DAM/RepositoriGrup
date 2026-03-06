@@ -54,17 +54,17 @@ public class UsuariController {
                     description = "No se puede obtener el usuario",
                     content = @Content(schema = @Schema(implementation=ResponseEntity.class)))
     })
-    public ResponseEntity<List<Usuari>> listarId(@RequestParam(value = "nombre") String nombre,
+    public ResponseEntity<Usuari> listarId(@RequestParam(value = "nombre") String nombre,
                                                  @RequestParam(value = "contrasena") String contrasena) {
         List<Usuari> lista = service.listar();
         for(Usuari u :lista){
             if (u.getNombre().equalsIgnoreCase(nombre)&&u.getPassword().equalsIgnoreCase(contrasena)){
                 // Código 200 OK para select
-                return new ResponseEntity<>(lista, HttpStatus.OK);
+                return new ResponseEntity<>(u, HttpStatus.OK);
             }
         }
 
-        return new ResponseEntity<>(lista, HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(new Usuari(), HttpStatus.NO_CONTENT);
 
     }
 
