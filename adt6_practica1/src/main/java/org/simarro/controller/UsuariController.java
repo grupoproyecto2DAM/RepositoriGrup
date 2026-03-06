@@ -42,6 +42,34 @@ public class UsuariController {
         return new ResponseEntity<>(lista, HttpStatus.OK);
     }
 
+    @GetMapping("/signIn")
+    @Operation(summary = "Obtiene el usuario por signin")
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Existe el usuario",
+                    content = @Content(schema = @Schema(implementation = Usuari.class))),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "No se puede obtener el usuario",
+                    content = @Content(schema = @Schema(implementation=ResponseEntity.class)))
+    })
+    public ResponseEntity<List<Usuari>> listarId(@RequestParam(value = "nombre") String nombre,
+                                                 @RequestParam(value = "contrasena") String contrasena) {
+        List<Usuari> lista = service.listar();
+        for(Usuari u :lista){
+            if (u.getNombre().equalsIgnoreCase(nombre)&&u.getPassword().equalsIgnoreCase(contrasena)){
+                // Código 200 OK para select
+                return new ResponseEntity<>(lista, HttpStatus.OK);
+            }
+        }
+
+        return new ResponseEntity<>(lista, HttpStatus.NO_CONTENT);
+
+    }
+
+
+
     @PostMapping
     @Operation(summary = "Registra un nuevo usuario")
     @ApiResponses(value = {
