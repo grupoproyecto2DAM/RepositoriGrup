@@ -1,0 +1,14 @@
+<odoo>
+    <menuitem id="simagrow_menu_root" name="SIMAGROW" sequence="10"/>
+
+    <menuitem id="simagrow_menu_incidencies" name="Incidències" parent="simagrow_menu_root"
+              action="simagrow_core.action_simagrow_incidencies" sequence="10"/>
+    <menuitem id="simagrow_menu_espais" name="Espais" parent="simagrow_menu_root"
+              action="action_simagrow_espai" sequence="20" groups="simagrow_core.group_simagrow_manager"/>
+    <menuitem id="simagrow_menu_config" name="Configuració" parent="simagrow_menu_root"
+              sequence="90" groups="simagrow_core.group_simagrow_manager"/>
+    <menuitem id="simagrow_menu_usuaris" name="Usuaris" parent="simagrow_menu_config"
+              action="action_simagrow_usuaris" sequence="10" groups="simagrow_core.group_simagrow_manager"/>
+    <menuitem id="simagrow_menu_tokens" name="API Tokens" parent="simagrow_menu_config"
+              action="action_simagrow_api_tokens" sequence="20" groups="simagrow_core.group_simagrow_manager"/>
+</odoo>
