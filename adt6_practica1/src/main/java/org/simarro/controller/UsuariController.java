@@ -75,14 +75,19 @@ public class UsuariController {
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "201",
-                    description = "Se registra la incidencia",
+                    description = "Se registra el usuario",
                     content = @Content(schema = @Schema(implementation = Usuari.class)))
     })
-    public ResponseEntity<Usuari> registrar(@RequestBody Integer nia, String nombre, String password, String rol, String curso, String materia) {
+    public ResponseEntity<Usuari> registrar(
+            @RequestParam Integer nia,
+            @RequestParam String nombre,
+            @RequestParam String password,
+            @RequestParam String rol,
+            @RequestParam String curso,
+            @RequestParam String materia
+    ) {
         Usuari usuari = new Usuari(nia, nombre, password, rol, curso, materia);
         Usuari obj = service.registrar(usuari);
-
-        // Código 201 CREATED para insert
         return new ResponseEntity<>(obj, HttpStatus.CREATED);
     }
 
