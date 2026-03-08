@@ -78,8 +78,8 @@ public class UsuariController {
                     description = "Se registra la incidencia",
                     content = @Content(schema = @Schema(implementation = Usuari.class)))
     })
-    public ResponseEntity<Usuari> registrar(@RequestBody String nombre, String password, String rol, String curso, String materia) {
-        Usuari usuari = new Usuari(nombre, password, rol, curso, materia);
+    public ResponseEntity<Usuari> registrar(@RequestBody Integer nia, String nombre, String password, String rol, String curso, String materia) {
+        Usuari usuari = new Usuari(nia, nombre, password, rol, curso, materia);
         Usuari obj = service.registrar(usuari);
 
         // Código 201 CREATED para insert

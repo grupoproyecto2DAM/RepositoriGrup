@@ -17,7 +17,6 @@ public class Espacio {
 
     @Schema(description = "Identificador del lugar", example = "1")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Schema(description = "Nombre del lugar", example = "Valencia")

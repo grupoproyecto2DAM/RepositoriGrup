@@ -11,7 +11,8 @@ public class Usuari {
     public Usuari() {
     }
 
-    public Usuari(String nombre, String password, String rol, String curso, String materia) {
+    public Usuari(Integer nia, String nombre, String password, String rol, String curso, String materia) {
+        this.nia = nia;
         this.nombre = nombre;
         this.password = password;
         this.rol = rol;

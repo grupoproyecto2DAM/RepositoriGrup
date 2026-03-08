@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/incidencias")
@@ -59,24 +60,6 @@ public class IncidenciaController {
         return new ResponseEntity<>(obj, HttpStatus.CREATED);
     }
 
-    @PutMapping
-    @Operation(summary = "Modifica una incidencia existente por id")
-    @ApiResponses(value = {
-            @ApiResponse(
-                    responseCode = "200",
-                    description = "Existe",
-                    content = @Content(schema = @Schema(implementation = Incidencia.class))),
-            @ApiResponse(
-                    responseCode = "404",
-                    description = "No existe",
-                    content = @Content(schema = @Schema(implementation=ResponseEntity.class)))
-    })
-    public ResponseEntity<Incidencia> modificar(@RequestBody Incidencia incidencia) {
-        Incidencia obj = service.modificar(incidencia);
-
-        // Código 200 OK para update
-        return new ResponseEntity<>(obj, HttpStatus.OK);
-    }
 
     @DeleteMapping("/eliminar/{id}")
     @Operation(summary = "Elimina una incidencia existente por id")
@@ -114,6 +97,30 @@ public class IncidenciaController {
 
         // Código 200 OK para select
         return new ResponseEntity<>(lista, HttpStatus.OK);
+    }
+
+    @GetMapping("/modificarEstado/{id}")
+    @Operation(summary = "Obtiene el la incidencia dado el id")
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Existe",
+                    content = @Content(schema = @Schema(implementation = Incidencia.class))),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "No se puede obtener",
+                    content = @Content(schema = @Schema(implementation=ResponseEntity.class)))
+    })
+    public ResponseEntity<Incidencia> cambiarEstado(@PathVariable Integer id) {
+        List<Incidencia> lista = service.listar();
+        for (Incidencia i :lista){
+            if (Objects.equals(i.getId(), id)){
+                return new ResponseEntity<>(i, HttpStatus.OK);
+            }
+        }
+
+        // Código 200 OK para select
+        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     /////////////////////////////////////////
