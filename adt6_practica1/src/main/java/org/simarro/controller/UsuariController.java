@@ -68,7 +68,7 @@ public class UsuariController {
 
     }
 
-    @GetMapping("/signIn")
+    @GetMapping("/signIn2")
     @Operation(summary = "Obtiene el usuario por signin")
     @ApiResponses(value = {
             @ApiResponse(
