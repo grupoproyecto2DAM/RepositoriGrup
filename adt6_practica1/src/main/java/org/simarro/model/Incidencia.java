@@ -21,36 +21,36 @@ public class Incidencia {
         this.estado = estado;
     }
 
-    @Schema(description = "Identificador de la incidencia", example = "1")
+    @Schema(description = "Identificador de la incidencia", example = "12564")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Schema(description = "Nombre principal de la incidencia", example = "Valencia")
+    @Schema(description = "Nombre principal de la incidencia", example = "Sa cagao alguien")
     @Column
     private String nombre;
 
-    @Schema(description = "El tipo segun la incidencia que sea", example = "Madrid")
+    @Schema(description = "El tipo segun la incidencia que sea", example = "Otros")
     @Column
     private String tipo;
 
-    @Schema(description = "Es donde se ha realizado la incidencia", example = "15.2")
+    @Schema(description = "Es donde se ha realizado la incidencia", example = "PATIO")
     @Column
     private String zona;
 
-    @Schema(description = "Detalles de la incidencia", example = "Qatar Airlines")
+    @Schema(description = "Detalles de la incidencia", example = "Huele mu mal")
     @Column
     private String descripcion;
 
-    @Schema(description = "Cuando se ha realizado", example = "Qatar Airlines")
+    @Schema(description = "Cuando se ha realizado", example = "15/05/2025")
     @Column
     private String fecha;
 
-    @Schema(description = "Cuando se ha realizado", example = "Qatar Airlines")
+    @Schema(description = "Cuando se ha realizado", example = "123456")
     @Column
     private Integer alumnoNIA;
 
-    @Schema(description = "Cuando se ha realizado", example = "Qatar Airlines")
+    @Schema(description = "Cuando se ha realizado", example = "En proceso")
     @Column
     private String estado;
 

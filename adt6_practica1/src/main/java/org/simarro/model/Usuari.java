@@ -20,12 +20,11 @@ public class Usuari {
         this.materia = materia;
     }
 
-    @Schema(description = "Identificador de la incidencia", example = "1")
+    @Schema(description = "Identificador del usuario", example = "1")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer nia;
 
-    @Schema(description = "Nombre principal de la incidencia", example = "Pedro")
+    @Schema(description = "Nombre principal", example = "Pedro")
     @Column
     private String nombre;
 
