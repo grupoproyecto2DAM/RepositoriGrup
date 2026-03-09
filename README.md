@@ -50,31 +50,6 @@ A continuación se muestran algunas capturas reales de la aplicación funcionand
 
 ---
 
-## 🐞 Incidencias encontradas
-
-### 1. Fallo en el login online
-El backend comparaba `Integer` con `==`, lo que provocaba que el login por NIA fallara siempre.  
-**Solución:** Se implementó login offline con Room.
-
-### 2. Room no encontraba la tabla
-La query usaba `FROM usuarios` pero la tabla real era `usuario`.  
-**Solución:** Se corrigió el nombre en el DAO.
-
-### 3. La app se congelaba al iniciar sesión
-La consulta a Room se hacía en el hilo principal.  
-**Solución:** Se movió a `lifecycleScope.launch`.
-
----
-
-## 🔮 Mejoras futuras
-
-- Sincronización automática entre Room y la API.
-- Implementación de roles con permisos diferenciados.
-- Añadir modo oscuro.
-- Añadir notificaciones push.
-
----
-
 ## 👤 Autor
 
 **Alex Camuñas Martínez**  
