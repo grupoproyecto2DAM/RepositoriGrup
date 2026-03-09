@@ -1,7 +1,7 @@
 # 🌱 SimaGrow – Gestión de incidencias
 
 SimaGrow es una aplicación Android desarrollada para gestionar usuarios, cursos y actividades de forma sencilla.  
-Incluye registro, login local con Room, navegación por pantallas y almacenamiento seguro de datos.
+Incluye registro, login, navegación por pantallas y almacenamiento seguro de datos.
 
 ---
 
@@ -27,7 +27,7 @@ A continuación se muestran algunas capturas reales de la aplicación funcionand
 
 ## 🚀 Funcionalidades principales
 
-- 🔐 **Login offline con Room**
+- 🔐 **Login de usuarios**
 - 📝 **Registro de usuarios**
 - 🗂️ **Almacenamiento local con Room**
 - 🗂️ **Almacenamiento online con Spring Boot**
