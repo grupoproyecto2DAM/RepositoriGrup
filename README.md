@@ -50,20 +50,6 @@ A continuación se muestran algunas capturas reales de la aplicación funcionand
 
 ---
 
-## 📂 Estructura del proyecto
-
-/app
-├── activitis/
-├── dao/
-├── database/
-├── model/
-├── api/
-├── ui/
-└── utils/
-
-
----
-
 ## 🐞 Incidencias encontradas
 
 ### 1. Fallo en el login online
