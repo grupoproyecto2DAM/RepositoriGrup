@@ -10,11 +10,9 @@ Incluye registro, login local con Room, navegación por pantallas y almacenamien
 A continuación se muestran algunas capturas reales de la aplicación funcionando en un dispositivo Android.
 
 ### 🔐 Pantalla de Login
-<img width="300" src="https://github.com/user-attachments/assets/aaab37df-1475-4bb4-b001-4b9ff7953c44" />
 <img width="300" src="https://github.com/user-attachments/assets/7fc168f0-2fb9-46e2-875c-f88fd834cfd5" />
 
 ### 📝 Registro de Usuario
-<img width="300" src="https://github.com/user-attachments/assets/6217b59f-3e9f-470a-9a90-af7d343015a9" />
 <img width="300" src="https://github.com/user-attachments/assets/e513dd63-fad6-42f8-9f67-24976e8e2959" />
 
 ### 🏠 Pantalla Principal
