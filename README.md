@@ -54,6 +54,5 @@ A continuación se muestran algunas capturas reales de la aplicación funcionand
 ## 👤 Autor
 
 **Alex Camuñas Martínez**  
-Proyecto desarrollado por alumnos de 2DAM.
 
 
