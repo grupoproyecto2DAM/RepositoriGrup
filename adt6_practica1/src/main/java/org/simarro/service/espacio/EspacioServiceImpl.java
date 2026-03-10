@@ -21,11 +21,6 @@ public class EspacioServiceImpl implements IEspacioService {
     }
 
     @Override
-    public Espacio modificar(Espacio espacio) {
-        return repo.save(espacio);
-    }
-
-    @Override
     public List<Espacio> listar() {
         return repo.findAll();
     }
@@ -43,8 +38,6 @@ public class EspacioServiceImpl implements IEspacioService {
         //Opción 1 - Eliminar
         repo.eliminarPorNombre(nombre);
 
-        //Opción 2 - Eliminar
-        // repo.deleteByTitulo(titulo);
     }
 
     @Override
@@ -52,8 +45,6 @@ public class EspacioServiceImpl implements IEspacioService {
         // Opción 1 - ExisteDestino
         return repo.existsByNombre(nombre);
 
-        // Opción 2 - ExisteDestino
-        // return repo.existePorFecha(fecha);
 
     }
 

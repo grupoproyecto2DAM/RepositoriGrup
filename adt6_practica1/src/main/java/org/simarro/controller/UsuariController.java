@@ -154,7 +154,7 @@ public class UsuariController {
                     description = "No existe",
                     content = @Content(schema = @Schema(implementation=ResponseEntity.class)))
     })
-    public ResponseEntity<Void> eliminarPoNombre(@RequestParam(value = "nombre") String nombre) {
+    public ResponseEntity<Void> eliminarPorNombre(@RequestParam(value = "nombre") String nombre) {
 
         if (!service.existsByNombre(nombre)) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

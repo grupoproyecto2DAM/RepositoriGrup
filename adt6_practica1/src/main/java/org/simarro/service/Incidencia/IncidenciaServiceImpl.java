@@ -27,7 +27,7 @@ public class IncidenciaServiceImpl implements IIncidenciaService {
 
     @Override
     public List<Incidencia> buscarporNIA(Integer nia) {
-        return repo.findByAlumnoNIA(nia);
+        return repo.findByAlumnoNia(nia);
     }
 
     @Override

@@ -17,9 +17,6 @@ public interface IUsuariRepository extends JpaRepository<Usuari, Integer> {
     @Modifying
     @Query(value = "DELETE FROM incidencia WHERE nombre LIKE %:nombre%", nativeQuery = true)
     void eliminarPorNombre(@Param("nombre") String nombre);
-
     boolean existsByNombre(String nombre);
-
-
 
 }

@@ -1,6 +1,7 @@
 package org.simarro.service.Incidencia;
 
 import org.simarro.model.Incidencia;
+import org.simarro.model.Usuari;
 
 import java.util.List;
 

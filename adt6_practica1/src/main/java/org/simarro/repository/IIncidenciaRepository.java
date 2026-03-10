@@ -12,15 +12,12 @@ import java.util.List;
 @Repository
 public interface IIncidenciaRepository extends JpaRepository<Incidencia, Integer> {
 
-    // Métodos específicos de esta entidad mediante JPQL
-    //Opción 1 - Eliminar
     @Modifying
     @Query(value = "DELETE FROM incidencia WHERE nombre LIKE %:nombre%", nativeQuery = true)
     void eliminarPorNombre(@Param("nombre") String nombre);
 
-
-    List<Incidencia> findByAlumnoNIA(Integer alumnoNIA);
+    // CORRECCIÓN AQUÍ: De NIA a Nia para que coincida con Usuari.nia
+    List<Incidencia> findByAlumnoNia(Integer nia);
 
     boolean existsByNombre(String nombre);
-
 }

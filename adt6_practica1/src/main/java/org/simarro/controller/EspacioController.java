@@ -58,29 +58,6 @@ public class EspacioController {
         return new ResponseEntity<>(obj, HttpStatus.CREATED);
     }
 
-    @PutMapping
-    @Operation(summary = "Modifica un espacio existente")
-    @ApiResponses(value = {
-            @ApiResponse(
-                    responseCode = "200",
-                    description = "Existe",
-                    content = @Content(schema = @Schema(implementation = Espacio.class))),
-            @ApiResponse(
-                    responseCode = "404",
-                    description = "No existe",
-                    content = @Content(schema = @Schema(implementation=ResponseEntity.class)))
-    })
-    public ResponseEntity<Espacio> modificar(@RequestBody String nombre) {
-        List<Espacio> todos = service.listar();
-        for(Espacio espacio:todos){
-            if (espacio.getNombre().equalsIgnoreCase(nombre)){
-                Espacio obj = service.modificar(espacio);
-                // Código 200 OK para update
-                return new ResponseEntity<>(obj, HttpStatus.OK);
-            }
-        }
-        return null;
-    }
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Elimina un espacio existente por id")

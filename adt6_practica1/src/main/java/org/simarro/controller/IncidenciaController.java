@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.simarro.model.Incidencia;
+import org.simarro.model.Usuari;
 import org.simarro.service.Incidencia.IIncidenciaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -53,7 +54,10 @@ public class IncidenciaController {
                     content = @Content(schema = @Schema(implementation = Incidencia.class)))
     })
     public ResponseEntity<Incidencia> registrar(@RequestBody String nombre, String tipo, String zona, String descripcion, String fecha, Integer alumnoNIA, String estado) {
-        Incidencia inc = new Incidencia(nombre, tipo, zona, descripcion, fecha, alumnoNIA, estado);
+        Usuari alumno = new Usuari();
+        alumno.setNia(alumnoNIA);
+
+        Incidencia inc = new Incidencia(nombre, tipo, zona, descripcion, fecha, alumno, estado);
         Incidencia obj = service.registrar(inc);
 
         // Código 201 CREATED para insert
