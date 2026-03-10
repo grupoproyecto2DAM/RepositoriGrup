@@ -36,7 +36,7 @@ public class Usuari {
     @Column
     private String rol;
 
-    @Schema(description = "Detalles del alumno", example = "Es mu weno")
+    @Schema(description = "Curso", example = "2 DAM")
     @Column
     private String curso;
 

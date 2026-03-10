@@ -19,13 +19,10 @@ public interface IEspacioRepository extends JpaRepository<Espacio, Integer> {
     @Modifying
     @Query(value = "DELETE FROM espacio WHERE nombre LIKE %:nombre%", nativeQuery = true)
     void eliminarPorNombre(@Param("nombre") String nombre);
-    // Opción 2 - Eliminar
-    void deleteByNombre(String nombre);
 
     // ExisteDestino
     boolean existsByNombre(String nombre);
 
-    List<Espacio> findByNombre(String nombre);
 
     Optional<Espacio> findById(Integer id);
 

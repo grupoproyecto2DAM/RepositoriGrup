@@ -47,7 +47,7 @@ public class EspacioController {
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "201",
-                    description = "Se registra la incidencia",
+                    description = "Se registra el espacio",
                     content = @Content(schema = @Schema(implementation = Espacio.class)))
     })
     public ResponseEntity<Espacio> registrar(@RequestBody String nombre) {
@@ -105,7 +105,7 @@ public class EspacioController {
     // Métodos específicos de esta entidad //
     /////////////////////////////////////////
     @DeleteMapping("/eliminarPorNombre")
-    @Operation(summary = "Elimina un espacio")
+    @Operation(summary = "Elimina un espacio por nombre")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -128,33 +128,4 @@ public class EspacioController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-
-
-    // Búsqueda filtrada sin métodos específicos
-    @GetMapping("/busquedaFiltrada2")
-    @Operation(summary = "Busca un espacio con un filtro2")
-    @ApiResponses(value = {
-            @ApiResponse(
-                    responseCode = "200",
-                    description = "Existe el listado, aunque puede que vacio",
-                    content = @Content(schema = @Schema(implementation = Espacio.class))),
-            @ApiResponse(
-                    responseCode = "404",
-                    description = "No se puede obtener el listado",
-                    content = @Content(schema = @Schema(implementation=ResponseEntity.class)))
-    })
-    public ResponseEntity<List<Espacio>> buscarIncidencias2(
-            @RequestParam(value = "titulo", required = true) String nombre){
-
-        // Obtengo todos las incidencias filtradas
-        List<Espacio> resultados  = service.listarBusquedaFiltrada2(nombre);
-
-        if(resultados.isEmpty()) {
-            // Código 204 NoData para select
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }else{
-            // Código 200 OK para select
-            return new ResponseEntity<>(resultados, HttpStatus.OK);
-        }
-    }
 }

@@ -19,10 +19,6 @@ public class IncidenciaServiceImpl implements IIncidenciaService {
         return repo.save(incidencia);
     }
 
-    @Override
-    public Incidencia modificar(Incidencia incidencia) {
-        return repo.save(incidencia);
-    }
 
     @Override
     public List<Incidencia> listar() {

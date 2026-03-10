@@ -58,23 +58,4 @@ public class EspacioServiceImpl implements IEspacioService {
     }
 
 
-    @Override
-    public List<Espacio> listarBusquedaFiltrada2(String nombre) {
-
-        List<Espacio> todos = repo.findAll();
-
-        List<Espacio> resultados = new ArrayList<>();
-
-        // En este ejemplo, en el controlador se pasan obligatoriamente
-        // todos los parámetros. Por eso la condición (if) es fácil.
-        // Si suponemos que podemos pasar el número de parámetros que
-        // queramos, deberíamos hacer más condiciones para cada caso.
-        for (Espacio espacio : todos) {
-            if (espacio.getNombre().toLowerCase().equals(nombre)) {
-
-                resultados.add(espacio);
-            }
-        }
-        return resultados;
-    }
 }

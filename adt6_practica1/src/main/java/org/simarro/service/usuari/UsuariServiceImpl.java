@@ -19,10 +19,6 @@ public class UsuariServiceImpl implements IUsuariService {
         return repo.save(usuari);
     }
 
-    @Override
-    public Usuari modificar(Usuari usuari) {
-        return repo.save(usuari);
-    }
 
     @Override
     public List<Usuari> listar() {

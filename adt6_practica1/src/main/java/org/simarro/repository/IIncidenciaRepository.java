@@ -17,23 +17,10 @@ public interface IIncidenciaRepository extends JpaRepository<Incidencia, Integer
     @Modifying
     @Query(value = "DELETE FROM incidencia WHERE nombre LIKE %:nombre%", nativeQuery = true)
     void eliminarPorNombre(@Param("nombre") String nombre);
-    // Opción 2 - Eliminar
-    void deleteByNombre(String nombre);
 
-
-    List<Incidencia> findByTipoAndZona(String tipo, String zona);
-    List<Incidencia> findByZona(String zona);
-    List<Incidencia> findByNombreAndZona(String nombre, String zona);
 
     List<Incidencia> findByAlumnoNIA(Integer alumnoNIA);
-    List<Incidencia> findByNombre(String nombre);
-    List<Incidencia> findByTipo(String tipo);
-    List<Incidencia> findByNombreAndTipo(String nombre, String tipo);
+
     boolean existsByNombre(String nombre);
-
-    // Opción 1 - ExisteDestino
-    @Query("SELECT CASE WHEN COUNT(v) > 0 THEN 'true' ELSE 'false' END FROM Incidencia v WHERE v.tipo = :tipo")
-    boolean existePorTipo(@Param("tipo") String tipo);
-
 
 }

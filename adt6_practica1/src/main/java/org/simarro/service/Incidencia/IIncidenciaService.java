@@ -9,7 +9,6 @@ public interface IIncidenciaService {
     List<Incidencia> listar();
     List<Incidencia> buscarporNIA(Integer nia);
     Incidencia registrar(Incidencia incidencia);
-    Incidencia modificar(Incidencia incidencia);
     void eliminar(Integer id);
 
     // Métodos específicos de esta entidad

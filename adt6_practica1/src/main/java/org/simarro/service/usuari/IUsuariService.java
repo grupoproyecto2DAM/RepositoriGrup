@@ -8,7 +8,6 @@ public interface IUsuariService {
 
     List<Usuari> listar();
     Usuari registrar(Usuari usuari);
-    Usuari modificar(Usuari usuari);
     void eliminar(Integer id);
 
     // Métodos específicos de esta entidad

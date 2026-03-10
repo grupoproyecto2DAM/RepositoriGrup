@@ -43,7 +43,7 @@ public class UsuariController {
     }
 
     @GetMapping("/signIn")
-    @Operation(summary = "Obtiene el usuario por signin")
+    @Operation(summary = "Obtiene el usuario por signin por el nombre")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -69,7 +69,7 @@ public class UsuariController {
     }
 
     @GetMapping("/signIn2")
-    @Operation(summary = "Obtiene el usuario por signin")
+    @Operation(summary = "Obtiene el usuario por signin por el NIA")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",

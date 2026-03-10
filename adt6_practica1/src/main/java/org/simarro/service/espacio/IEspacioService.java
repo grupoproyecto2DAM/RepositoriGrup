@@ -15,5 +15,5 @@ public interface IEspacioService {
     // Métodos específicos de esta entidad
     void eliminarPorNombre(String nombre);
     boolean existsByNombre(String nombre);
-    List<Espacio> listarBusquedaFiltrada2(String nombre);
+
 }
