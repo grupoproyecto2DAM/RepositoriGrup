@@ -35,7 +35,6 @@ Nos centramos en los objetos **JSON** y en las peticiones para evitar errores de
 * **Spring Boot**
 * **Spring Data JPA**
 * **Hibernate**
-* **PostgreSQL**
 * **Maven**
 
 ---
