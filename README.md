@@ -11,7 +11,7 @@ Nos centramos en los objetos **JSON** y en las peticiones para evitar errores de
 ### 🔐 Seguridad y Acceso
 
 * **Auth Controller:** Gestión de registro y login. Comprobamos la identidad del usuario.
-* **Data Persistence:** Sincronización entre el cliente Android y la base de datos.
+* **Data Persistence:** Sincronización entre los clientes y la base de datos.
 
 ### 📋 Gestión de Recursos
 
